@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ✏️ SEO: عدّل السطور دي مرة واحدة (جوجل ولينكدإن بيقروها من هنا مش من data.js) -->
+  <title>Your Full Name | Flutter Developer & Mobile Engineer</title>
+  <meta name="description" content="Your Full Name is a Flutter developer based in Cairo. See projects, experience and contact details." />
+  <meta name="author" content="Your Full Name" />
+  <link rel="canonical" href="https://YOUR_GITHUB_USERNAME.github.io/portfolio/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Your Full Name | Flutter Developer" />
+  <meta property="og:description" content="Projects, experience and contact details." />
+  <meta property="og:url" content="https://YOUR_GITHUB_USERNAME.github.io/portfolio/" />
+  <meta property="og:image" content="https://YOUR_GITHUB_USERNAME.github.io/portfolio/assets/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- ✏️ نهاية جزء SEO -->
+
+  <meta name="theme-color" content="#0a0c12" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👋</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    document.documentElement.classList.add('js');
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t;
+      else if (matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.dataset.theme = 'light'; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="#home" id="brand" aria-label="Home"></a>
+      <nav id="navLinks" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-tools">
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle light / dark theme">◐</button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero"><div class="wrap hero-in" id="heroRoot"></div></section>
+    <section class="metrics-sec" id="metrics"><div class="wrap"><div class="metrics" id="metricsRoot"></div></div></section>
+
+    <section id="about"><div class="wrap">
+      <p class="eyebrow">About</p><h2>A bit about me</h2>
+      <div class="about" id="aboutRoot"></div>
+    </div></section>
+
+    <section id="experience"><div class="wrap">
+      <p class="eyebrow">Experience</p><h2>Where I've worked</h2>
+      <div class="timeline" id="expRoot"></div>
+    </div></section>
+
+    <section id="projects"><div class="wrap">
+      <p class="eyebrow">Projects</p><h2>Selected work</h2>
+      <p class="sub">Open any project to read the full case study: the problem, the solution and the results.</p>
+      <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+      <div class="grid" id="projectGrid"></div>
+    </div></section>
+
+    <section id="skills"><div class="wrap">
+      <p class="eyebrow">Skills</p><h2>Toolkit</h2>
+      <div class="skills" id="skillsRoot"></div>
+    </div></section>
+
+    <section id="education"><div class="wrap">
+      <p class="eyebrow">Education</p><h2>Education &amp; certifications</h2>
+      <div class="grid two" id="eduRoot"></div>
+      <div class="certs" id="certRoot"></div>
+    </div></section>
+
+    <section id="contact"><div class="wrap">
+      <div class="contact card" id="contactRoot"></div>
+    </div></section>
+  </main>
+
+  <footer><div class="wrap foot" id="footRoot"></div></footer>
+  <button class="to-top" id="toTop" aria-label="Back to top" hidden>↑</button>
+
+  <dialog id="modal" aria-labelledby="mTitle"></dialog>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
