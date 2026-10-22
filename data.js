@@ -8,24 +8,24 @@ window.PORTFOLIO = {
   /* ---------- 1) البيانات الأساسية ---------- */
   site: {
     name: "Mahmoud Nazmy",
-    role: "Flutter Developer & Mobile Engineer",          // المسمى الوظيفي
+    role: "Machine Learning Engineer & Data Scientist",          // المسمى الوظيفي
     tagline: "I build fast, accessible and beautiful apps, from idea to store release.",
     availability: "Open to new opportunities",             // سيبها "" لو مش عايز البادج
     location: "Cairo, Egypt",
-    email: "you@example.com",
-    phone: "",                                             // اختياري
+    email: "Mahmoooudnazmy103@gmail.com",
+    phone: "01026036685",                                             // اختياري
     languages: "Arabic (Native) · English (Fluent)",
     avatar: "assets/profile.jpg",                          // ضع صورتك في فولدر assets
     cv: "assets/CV.pdf",                                   // ضع الـ CV في فولدر assets (أو سيبها "")
-    siteUrl: "https://YOUR_GITHUB_USERNAME.github.io/portfolio/", // لينك موقعك بعد النشر
+    siteUrl: "https://mahmoudnazmy48.github.io/portfolio/", // لينك موقعك بعد النشر
     bio: [
       "Paragraph 1: who you are, your experience, and what you specialize in.",
       "Paragraph 2: your approach, the kind of problems you love solving, and your strengths.",
       "Paragraph 3 (optional): teaching, open source, community, or what you're looking for next."
     ],
     socials: {
-      github: "https://github.com/YOUR_GITHUB_USERNAME",
-      linkedin: "https://www.linkedin.com/in/YOUR_USERNAME",
+      github: "github.com/mahmoudnazmy48",
+      linkedin: "linkedin.com/in/mahmoud-nazmy-a408b334a",
       x: "",
       medium: "",
       behance: ""
