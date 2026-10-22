@@ -24,8 +24,8 @@ window.PORTFOLIO = {
       "Paragraph 3 (optional): teaching, open source, community, or what you're looking for next."
     ],
     socials: {
-      github: "github.com/mahmoudnazmy48",
-      linkedin: "linkedin.com/in/mahmoud-nazmy-a408b334a",
+      github: "https://github.com/mahmoudnazmy48",
+      linkedin: "https://www.linkedin.com/in/mahmoud-nazmy-a408b334a/",
       x: "",
       medium: "",
       behance: ""
