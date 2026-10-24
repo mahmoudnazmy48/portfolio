@@ -1,360 +1,171 @@
 /* ==========================================================================
-   Mahmoud Nazmy — Portfolio Data
-   Edit this file to update the content displayed on your portfolio.
+   Mahmoud Nazmy: Portfolio Data
+   ✏️ ده الملف الوحيد اللي بتعدل فيه المحتوى. أي قسم فاضي [] بيختفي، وأي لينك "" بيختفي زراره.
    ========================================================================== */
-
 window.PORTFOLIO = {
 
-  /* ---------- 1) Personal Information ---------- */
   site: {
     name: "Mahmoud Nazmy",
-
-    role: "Data Analyst | Business Intelligence | Machine Learning & AI",
-
-    tagline: "Engineering professional with a background in data analytics and business intelligence, currently developing machine learning and AI solutions through practical projects.",
-
+    role: "Data Analyst · Business Intelligence · Data Science · Machine Learning",
+    tagline: "I turn operational data into decisions using SQL, Python, Power BI and machine learning.",
     availability: "Open to Data Analytics, BI & Machine Learning opportunities",
-
     location: "Cairo, Egypt",
-
     email: "mahmoooudnazmy103@gmail.com",
-
-    phone: "+201026036685",
-
+    phone: "+201026036685",            // سيبه "" لو مش عايز رقمك يظهر للعامة
     languages: "Arabic (Native) · English (B2)",
-
     avatar: "assets/profile.jpg",
-
     cv: "assets/CV.pdf",
-
     siteUrl: "https://mahmoudnazmy48.github.io/portfolio/",
-
+    heroChips: ["SQL", "Python", "Power BI", "Machine Learning"],
     bio: [
-      "I'm an engineering professional and Egyptian Armed Forces officer with a Bachelor's degree in Electrical Engineering (Computer Engineering specialization) from the Military Technical College and a Master's degree in Data Analysis from Cairo University.",
-
-      "My background combines engineering systems and operational management with data analytics and business intelligence. I enjoy structured problem-solving and using data to understand operational challenges and support better decisions.",
-
-      "I'm currently studying the Machine Learning track through the Digital Egypt Pioneers Initiative (DEPI) and building practical projects to strengthen my skills in data analysis, machine learning, and AI."
+      "My path into technology began with Computer Engineering at the Military Technical College. After graduating, I joined the Egyptian Armed Forces, where years of work with information systems built discipline, ownership, time management and the ability to perform under pressure.",
+      "Along the way I became drawn to data: taking raw data, understanding what it says, finding patterns and turning them into something useful. That curiosity led me to an M.Sc. in Data Analysis at Cairo University, alongside hands-on work in statistics, visualization and business intelligence.",
+      "As my understanding of data grew, a new question followed: what if I could go beyond analyzing data and build systems that learn from it? That question led me to machine learning and, increasingly, to AI engineering.",
+      "Today I'm continuing that move from data analysis into machine learning and AI through the DEPI Machine Learning track and projects I build myself, aiming to understand not only how models work, but why they work."
     ],
-
     socials: {
       github: "https://github.com/mahmoudnazmy48",
       linkedin: "https://www.linkedin.com/in/mahmoud-nazmy-a408b334a/",
-      x: "",
-      medium: "",
-      behance: ""
+      x: "", medium: "", behance: ""
     }
   },
 
+  journey: [
+    { title: "Computer Engineering", sub: "Military Technical College" },
+    { title: "Data Analysis", sub: "M.Sc., Cairo University" },
+    { title: "Machine Learning", sub: "DEPI track, in progress" },
+    { title: "AI Engineering", sub: "Where I'm heading" }
+  ],
 
-  /* ---------- 2) Profile Highlights ---------- */
   metrics: [
+    { value: "M.Sc.", label: "Data Analysis · Cairo University" },
+    { value: "B.Sc.", label: "Computer Engineering · Military Technical College" },
+    { value: "DEPI", label: "Machine Learning Track · In Progress" }
+  ],
+
+  /* ---------- What I do (3 كروت تلخص تخصصك) ---------- */
+  focus: [
     {
-      value: "M.Sc.",
-      label: "Data Analysis · Cairo University"
+      icon: "🔎",
+      title: "Data Analysis",
+      text: "Understanding what raw data is saying and turning it into insight.",
+      points: ["Data cleaning and exploratory analysis", "Statistical analysis", "Customer segmentation and churn analysis"]
     },
     {
-      value: "B.Sc.",
-      label: "Electrical Engineering · Military Technical College"
+      icon: "📊",
+      title: "Business Intelligence",
+      text: "Clear KPIs, reports and dashboards that support decisions.",
+      points: ["Power BI dashboards with DAX", "KPI reporting and data visualization", "SQL Server querying and database design"]
     },
     {
-      value: "DEPI",
-      label: "Machine Learning Track · In Progress"
+      icon: "🤖",
+      title: "Data Science & Machine Learning",
+      text: "Moving from analyzing data to building models that learn from it.",
+      points: ["Regression and classification", "Feature preparation and model evaluation", "Deep learning fundamentals (in progress)"]
     }
   ],
 
-
-  /* ---------- 3) Professional Experience ---------- */
-  /* Add your actual employment dates in "period". */
-
+  /* ✏️ أضف تواريخ حقيقية في period (مثال: "2022 – Present") */
   experience: [
-
     {
-      role: "Lieutenant Colonel Engineer",
+      role: "Information Systems Department Manager",
+      org: "Air Defence House (Egyptian Armed Forces)",
+      location: "Egypt",
+      period: "2022 – Present",
+      current: true,
+      bullets: [
+        "Manage information systems activities and coordinate technology-related operational requirements.",
+        "Support the organization and reliability of information systems, data and digital workflows.",
+        "Identify opportunities to improve information management, operational processes and reporting.",
+        "Apply engineering and analytical problem-solving skills to support technology-driven operations."
+      ],
+      tags: ["Information Systems", "Data Management", "Digital Transformation", "Process Improvement"]
+    },
+    {
+      role: "Command Center Systems Engineer",
       org: "Egyptian Armed Forces",
       location: "Egypt",
-      period: "",
-      current: true,
-
-      bullets: [
-        "Engineering background in command center systems, with experience addressing technical requirements and operational challenges.",
-
-        "Applied structured troubleshooting and engineering problem-solving in a systems-oriented environment."
-      ],
-
-      tags: [
-        "Systems Engineering",
-        "Technical Problem-Solving",
-        "Operations"
-      ]
-    },
-
-    {
-      role: "Department Manager, Memberships & Subscriptions",
-      org: "Dar Al Defaa Al Gawy",
-      location: "Egypt",
-      period: "",
+      period: "2012 – 2022",
       current: false,
-
       bullets: [
-        "Managed membership and subscription operations, including administrative workflows, records, and transactions.",
-
-        "Coordinated day-to-day processes to support service delivery and operational continuity.",
-
-        "Contributed to improving administrative procedures and information management."
+        "Worked as an engineer specializing in command center systems.",
+        "Applied engineering knowledge and structured troubleshooting to technical systems and operational requirements.",
+        "Built experience in systems engineering, technical problem-solving and operational environments."
       ],
-
-      tags: [
-        "Operations Management",
-        "Process Improvement",
-        "Records Management"
-      ]
-    },
-
-    {
-      role: "Department Manager, Food & Beverage Control",
-      org: "Dar Al Defaa Al Gawy",
-      location: "Egypt",
-      period: "",
-      current: false,
-
-      bullets: [
-        "Managed food and beverage control activities and related operational workflows.",
-
-        "Coordinated with relevant departments, monitored daily activities, and supported adherence to procedures and service standards."
-      ],
-
-      tags: [
-        "Operations",
-        "Coordination",
-        "Quality Control"
-      ]
+      tags: ["Systems Engineering", "Technical Troubleshooting", "Engineering"]
     }
-
   ],
 
-
-  /* ---------- 4) Selected Technical Projects ---------- */
-  /* Replace GitHub links with specific repository URLs when available. */
-
+  /* ✏️ حط لينك Repo مستقل لكل مشروع بدل لينك البروفايل */
   projects: [
-
+    {
+      title: "Customer Segmentation & Churn Analysis",
+      badge: "Analytics & BI",
+      icon: "📊",
+      image: "",
+      categories: ["Data Analysis", "BI"],
+      summary: "Exploratory analysis, customer segmentation and churn-related insights with KPI reporting.",
+      tags: ["Python", "SQL", "Power BI", "DAX", "Excel"],
+      problem: "",
+      solution: "Worked on data preparation, exploratory analysis, visualizations and KPI reporting to explore customer segments and churn patterns.",
+      features: [],
+      results: "",
+      github: "https://github.com/mahmoudnazmy48",
+      live: ""
+    },
+    {
+      title: "Gate Access & Point-of-Sale Database",
+      badge: "machine learning",
+      icon: "🎟️",
+      image: "",
+      categories: ["machine learning"],
+      summary: "A relational database design for gate operations, ticket sales, memberships and operational reporting.",
+      tags: ["SQL Server", "SQL", "Relational Design"],
+      problem: "Gate, ticketing and membership information needs a consistent structure to support reliable operations and reporting.",
+      solution: "Designed a relational schema and business rules for gate operations, ticket sales and membership records, focused on data integrity and reporting needs.",
+      features: [
+        "Relational tables with defined relationships.",
+        "Constraints and business rules for data integrity.",
+        "A structure intended to support operational reporting."
+      ],
+      results: "",
+      github: "https://github.com/mahmoudnazmy48",
+      live: ""
+    },
     {
       title: "Interactive Digital Navigation App",
-
       badge: "Application Development",
-
       icon: "🧭",
-
       image: "",
-
-      categories: ["Mobile", "Web"],
-
+      categories: ["Mobile App Development"],
       summary: "A Flutter navigation application for a hospitality environment, using structured map data.",
-
-      tags: [
-        "Flutter",
-        "Dart",
-        "JSON"
-      ],
-
+      tags: ["Flutter", "Dart", "JSON"],
       problem: "Visitors in large venues may need help locating buildings and facilities.",
-
-      solution: "Developed an interactive navigation application in Flutter, with locations, buildings, and navigation connections organized as structured JSON data.",
-
+      solution: "Developed an interactive navigation application in Flutter, with locations, buildings and navigation connections organized as structured JSON data.",
       features: [
         "Map locations and buildings represented through structured data.",
         "Navigation connections modeled between points of interest.",
         "Flutter and Dart application development."
       ],
-
       results: "",
-
       github: "https://github.com/mahmoudnazmy48",
-
-      live: "https://mahmoudnazmy48.github.io/portfolio/"
-    },
-
-
-    {
-      title: "Gate Access & Point-of-Sale Database",
-
-      badge: "Database Design",
-
-      icon: "🎟️",
-
-      image: "",
-
-      categories: ["Data", "Databases"],
-
-      summary: "A relational database design for gate operations, ticket sales, memberships, and operational reporting.",
-
-      tags: [
-        "SQL Server",
-        "SQL",
-        "Relational Database Design"
-      ],
-
-      problem: "Gate, ticketing, and membership information needs consistent structure to support reliable operations and reporting.",
-
-      solution: "Designed a relational schema and business rules for gate operations, ticket sales, and membership records, with a focus on data integrity and reporting needs.",
-
-      features: [
-        "Relational tables and defined relationships.",
-        "Constraints and business rules for data integrity.",
-        "A database structure intended to support operational reporting."
-      ],
-
-      results: "",
-
-      github: "https://github.com/mahmoudnazmy48",
-
-      live: ""
-    },
-
-
-    {
-      title: "Customer Segmentation & Churn Analysis",
-
-      badge: "Analytics & BI",
-
-      icon: "📊",
-
-      image: "",
-
-      categories: ["Data", "Machine Learning"],
-
-      summary: "A data analytics use case involving exploratory analysis, customer segmentation, and churn-related insights.",
-
-      tags: [
-        "Python",
-        "SQL",
-        "Power BI",
-        "DAX",
-        "Excel"
-      ],
-
-      problem: "",
-
-      solution: "Worked on data preparation, exploratory analysis, visualizations, and KPI reporting to explore customer segments and churn patterns.",
-
-      features: [],
-
-      results: "",
-
-      github: "https://github.com/mahmoudnazmy48",
-
       live: ""
     }
-
   ],
-
-
-  /* ---------- 5) Technical Skills ---------- */
 
   skills: [
-
-    {
-      title: "Data Analytics & Business Intelligence",
-
-      items: [
-        "Python",
-        "SQL",
-        "Power BI",
-        "DAX",
-        "Excel",
-        "Data Cleaning",
-        "Exploratory Data Analysis",
-        "Data Visualization",
-        "KPI Reporting"
-      ]
-    },
-
-    {
-      title: "Machine Learning & AI",
-
-      items: [
-        "Supervised Learning",
-        "Regression",
-        "Classification",
-        "Feature Preparation",
-        "Model Evaluation",
-        "Deep Learning Fundamentals"
-      ]
-    },
-
-    {
-      title: "Programming & Databases",
-
-      items: [
-        "Python",
-        "R",
-        "SQL",
-        "Microsoft SQL Server",
-        "Relational Database Design"
-      ]
-    },
-
-    {
-      title: "Application Development",
-
-      items: [
-        "Flutter",
-        "Dart",
-        "JSON",
-        "Git",
-        "GitHub"
-      ]
-    }
-
+    { title: "Data Analysis & BI", items: ["Power BI", "DAX", "Excel", "Data Cleaning", "Exploratory Data Analysis", "Data Visualization", "KPI Reporting", "Statistical Analysis", "Customer Segmentation", "Churn Analysis"] },
+    { title: "Machine Learning & AI", items: ["Supervised Learning", "Regression", "Classification", "Feature Preparation", "Model Evaluation", "Deep Learning Fundamentals"] },
+    { title: "Programming & Databases", items: ["Python", "SQL", "R", "Microsoft SQL Server", "Relational Database Design"] },
+    { title: "Application Development", items: ["Flutter", "Dart", "JSON", "Git", "GitHub"] }
   ],
-
-
-  /* ---------- 6) Education ---------- */
 
   education: [
-
-    {
-      degree: "Master's Degree in Data Analysis",
-
-      school: "Cairo University, Egypt",
-
-      period: "",
-
-      note: "",
-
-      current: false
-    },
-
-    {
-      degree: "Bachelor's Degree in Electrical Engineering (Computer Engineering Specialization)",
-
-      school: "Military Technical College, Egypt",
-
-      period: "",
-
-      note: "",
-
-      current: false
-    }
-
+    { degree: "Master's Degree in Data Analysis", school: "Cairo University, Egypt", period: "", note: "", current: false },
+    { degree: "Bachelor's Degree in Electrical Engineering (Computer Engineering)", school: "Military Technical College, Egypt", period: "", note: "", current: false }
   ],
 
-
-  /* ---------- 7) Professional Development ---------- */
-
   certifications: [
-
-    {
-      title: "Machine Learning Track (In Progress)",
-
-      issuer: "Digital Egypt Pioneers Initiative (DEPI)",
-
-      date: "Ongoing",
-
-      url: ""
-    }
-
+    { title: "Machine Learning Track (In Progress)", issuer: "Digital Egypt Pioneers Initiative (DEPI)", date: "Ongoing", url: "" }
   ]
-
 };

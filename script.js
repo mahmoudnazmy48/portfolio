@@ -29,11 +29,11 @@
       </div>
       <div class="socials">${Object.keys(socLabels).filter(k => soc[k]).map(k => `<a href="${esc(soc[k])}" target="_blank" rel="noopener noreferrer">${socLabels[k]} ↗</a>`).join('')}</div>
     </div>
-    <div class="photo reveal" id="photo"><div class="ini" aria-hidden="true">${esc(ini(S.name))}</div></div>`;
+    <div class="photo reveal"><div id="photoIn"><div class="ini" aria-hidden="true">${esc(ini(S.name))}</div></div>${(S.heroChips || []).slice(0, 4).map((c, i) => `<span class="fchip c${i + 1}">${esc(c)}</span>`).join('')}</div>`;
   if (S.avatar) {
     const img = new Image();
     img.alt = `Portrait of ${S.name}`; img.decoding = 'async';
-    img.onload = () => $('#photo').replaceChildren(img);
+    img.onload = () => $('#photoIn').replaceChildren(img);
     img.src = S.avatar;
   }
 
@@ -42,6 +42,12 @@
     $('#metricsRoot').innerHTML = D.metrics.map(m => `<div class="metric reveal"><b>${esc(m.value)}</b><span>${esc(m.label)}</span></div>`).join('');
   } else $('#metrics').remove();
 
+  /* ---------- Focus ---------- */
+  const F = D.focus || [];
+  if (F.length) {
+    $('#focusRoot').innerHTML = F.map(f => `<article class="card focus reveal"><div class="f-ico" aria-hidden="true">${esc(f.icon)}</div><h3>${esc(f.title)}</h3><p>${esc(f.text)}</p><ul>${(f.points || []).map(p => `<li>${esc(p)}</li>`).join('')}</ul></article>`).join('');
+  } else drop('focus');
+
   /* ---------- About ---------- */
   const facts = [['Location', S.location], ['Email', S.email && `<a href="mailto:${esc(S.email)}">${esc(S.email)}</a>`, true],
     ['Phone', S.phone && `<a href="tel:${esc(S.phone.replace(/\s/g, ''))}">${esc(S.phone)}</a>`, true], ['Languages', S.languages]];
@@ -49,12 +55,17 @@
     <div class="reveal">${(S.bio || []).map(p => `<p>${esc(p)}</p>`).join('')}</div>
     <dl class="facts reveal">${facts.filter(f => f[1]).map(([k, v, raw]) => `<div><dt>${k}</dt><dd>${raw ? v : esc(v)}</dd></div>`).join('')}</dl>`;
 
+  const J = D.journey || [];
+  if (J.length) {
+    $('#journeyRoot').innerHTML = J.map((j, i) => `<div class="j-step reveal${i === J.length - 1 ? ' next' : ''}"><span class="j-n">0${i + 1}</span><h3>${esc(j.title)}</h3><p>${esc(j.sub)}</p></div>`).join('');
+  } else $('#journeyRoot').remove();
+
   /* ---------- Experience ---------- */
   if ((D.experience || []).length) {
     $('#expRoot').innerHTML = D.experience.map(e => `
       <article class="card t-item reveal${e.current ? ' current' : ''}">
         <div class="t-top"><div><h3>${esc(e.role)}</h3><p class="org">${esc(e.org)}</p></div>
-          <p class="meta">${[e.period ? esc(e.period) : '', e.current ? 'Current' : ''].filter(Boolean).join(' · ')}${e.location ? `<br>${esc(e.location)}` : ''}</p></div>
+          <p class="meta">${[e.period ? esc(e.period) : '', (e.current && !/present|current/i.test(e.period || '')) ? 'Current' : ''].filter(Boolean).join(' · ')}${e.location ? `<br>${esc(e.location)}` : ''}</p></div>
         ${(e.bullets || []).length ? `<ul>${e.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul>` : ''}
         ${tags(e.tags)}
       </article>`).join('');
