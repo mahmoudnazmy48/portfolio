@@ -54,7 +54,7 @@
     $('#expRoot').innerHTML = D.experience.map(e => `
       <article class="card t-item reveal${e.current ? ' current' : ''}">
         <div class="t-top"><div><h3>${esc(e.role)}</h3><p class="org">${esc(e.org)}</p></div>
-          <p class="meta">${esc(e.period)}${e.current ? ' · Current' : ''}<br>${esc(e.location)}</p></div>
+          <p class="meta">${[e.period ? esc(e.period) : '', e.current ? 'Current' : ''].filter(Boolean).join(' · ')}${e.location ? `<br>${esc(e.location)}` : ''}</p></div>
         ${(e.bullets || []).length ? `<ul>${e.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul>` : ''}
         ${tags(e.tags)}
       </article>`).join('');
@@ -105,8 +105,8 @@
   /* ---------- Education + certifications ---------- */
   const E = D.education || [], C = D.certifications || [];
   if (E.length || C.length) {
-    $('#eduRoot').innerHTML = E.map(e => `<article class="card edu reveal"><span class="chip">${esc(e.period)}${e.current ? ' · In progress' : ''}</span>
-      <h3 style="margin-top:12px">${esc(e.degree)}</h3><span class="org">${esc(e.school)}</span>${e.note ? `<p>${esc(e.note)}</p>` : ''}</article>`).join('');
+    $('#eduRoot').innerHTML = E.map(e => `<article class="card edu reveal">${(e.period || e.current) ? `<span class="chip">${esc(e.period)}${e.current ? ' · In progress' : ''}</span>` : ''}
+      <h3 style="margin-top:${(e.period || e.current) ? 12 : 0}px">${esc(e.degree)}</h3><span class="org">${esc(e.school)}</span>${e.note ? `<p>${esc(e.note)}</p>` : ''}</article>`).join('');
     $('#certRoot').innerHTML = C.map(c => {
       const inner = `<div>${esc(c.title)}<small>${esc(c.issuer)}</small></div><small>${esc(c.date)}</small>`;
       return c.url ? `<a class="cert reveal" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${inner}</a>` : `<div class="cert reveal">${inner}</div>`;
