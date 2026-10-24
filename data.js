@@ -11,7 +11,7 @@ window.PORTFOLIO = {
     availability: "Open to Data, ML & Mobile roles",
     location: "Cairo, Egypt",
     email: "mahmoooudnazmy103@gmail.com",
-    phone: "",                                  // سايبه فاضي عشان الخصوصية، اكتبه لو عايز
+    phone: "01026036685",                                  // سايبه فاضي عشان الخصوصية، اكتبه لو عايز
     languages: "Arabic (Native) · English (B2)",
     avatar: "assets/profile.jpg",
     cv: "assets/CV.pdf",
