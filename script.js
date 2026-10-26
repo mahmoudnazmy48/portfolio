@@ -102,7 +102,7 @@
       modal.innerHTML = `<div class="m-in">
         <div class="m-top"><div>${p.badge ? `<span class="chip">${esc(p.badge)}</span>` : ''}<h3 id="mTitle">${esc(p.title)}</h3></div>
           <button class="icon-btn" data-close aria-label="Close">✕</button></div>
-        <p class="sub" style="margin:10px 0 0">${esc(p.summary)}</p>${tags(p.tags)}
+        ${p.image ? `<img class="m-img" src="${esc(p.image)}" alt="Screenshot of ${esc(p.title)}" loading="lazy" />` : ''}<p class="sub" style="margin:10px 0 0">${esc(p.summary)}</p>${tags(p.tags)}
         ${sec('The problem', p.problem && `<p>${esc(p.problem)}</p>`)}
         ${sec('The solution', p.solution && `<p>${esc(p.solution)}</p>`)}
         ${sec('Key features', (p.features || []).length ? `<ul>${p.features.map(f => `<li>${esc(f)}</li>`).join('')}</ul>` : '')}
@@ -122,13 +122,24 @@
 
   /* ---------- Education + certifications ---------- */
   const E = D.education || [], C = D.certifications || [];
+  const certBtn = (title, src) => src ? `<button class="cert-btn" data-src="${esc(src)}" data-title="${esc(title)}" hidden>View certificate</button>` : '';
   if (E.length || C.length) {
     $('#eduRoot').innerHTML = E.map(e => `<article class="card edu reveal">${(e.period || e.current) ? `<span class="chip">${esc(e.period)}${e.current ? ' · In progress' : ''}</span>` : ''}
-      <h3 style="margin-top:${(e.period || e.current) ? 12 : 0}px">${esc(e.degree)}</h3><span class="org">${esc(e.school)}</span>${e.note ? `<p>${esc(e.note)}</p>` : ''}</article>`).join('');
-    $('#certRoot').innerHTML = C.map(c => {
-      const inner = `<div>${esc(c.title)}<small>${esc(c.issuer)}</small></div><small>${esc(c.date)}</small>`;
-      return c.url ? `<a class="cert reveal" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${inner}</a>` : `<div class="cert reveal">${inner}</div>`;
-    }).join('');
+      <h3 style="margin-top:${(e.period || e.current) ? 12 : 0}px">${esc(e.degree)}</h3><span class="org">${esc(e.school)}</span>${e.note ? `<p>${esc(e.note)}</p>` : ''}${certBtn(e.degree, e.certificate)}</article>`).join('');
+    $('#certRoot').innerHTML = C.map(c => `<div class="cert reveal"><div><b>${esc(c.title)}</b><small>${esc(c.issuer)}</small>${c.note ? `<small>${esc(c.note)}</small>` : ''}</div>
+      <div class="cert-side"><small>${esc(c.date)}</small>${certBtn(c.title, c.certificate)}${c.url ? `<a class="cert-link" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">Verify ↗</a>` : ''}</div></div>`).join('');
+    /* زرار الشهادة بيظهر بس لو ملف الصورة موجود فعلاً */
+    $$('.cert-btn').forEach(btn => { const im = new Image(); im.onload = () => { btn.hidden = false; }; im.src = btn.dataset.src; });
+    const cm = $('#certModal');
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('.cert-btn');
+      if (btn) {
+        cm.innerHTML = `<div class="m-in"><div class="m-top"><h3 id="cTitle">${esc(btn.dataset.title)}</h3><button class="icon-btn" data-close aria-label="Close">✕</button></div>
+          <img class="m-img" src="${esc(btn.dataset.src)}" alt="Certificate: ${esc(btn.dataset.title)}" />
+          <div class="m-foot"><a class="btn ghost" href="${esc(btn.dataset.src)}" target="_blank" rel="noopener">Open full size ↗</a></div></div>`;
+        cm.showModal();
+      } else if (cm.open && (e.target === cm || e.target.closest('#certModal [data-close]'))) cm.close();
+    });
   } else drop('education');
 
   /* ---------- Contact + footer ---------- */

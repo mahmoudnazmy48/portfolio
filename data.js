@@ -75,36 +75,49 @@ window.PORTFOLIO = {
       current: true,
       bullets: [
         "I run the information systems department and coordinate the technical needs of daily operations.",
-        "My focus is keeping our systems, data and digital workflows organized and reliable.",
-        "I look for ways to improve how information is managed and reported, and I use my engineering background to solve problems as they come up."
+        "I keep our systems, data and digital workflows organized and reliable, which is the foundation any analysis or model depends on.",
+        "I look for ways to improve how information is collected and reported, and I'm building my machine learning skills with these operational problems in mind."
       ],
-      tags: ["Information Systems", "Data Management", "Digital Transformation", "Process Improvement"]
+      tags: ["Information Systems", "Data Management", "Reporting", "Machine Learning (learning)"]
+    },
+    {
+      role: "Marketing Department Manager",
+      org: "Air Defence House (Egyptian Armed Forces)",
+      location: "Egypt",
+      period: "2024 – 2025",
+      current: false,
+      bullets: [
+        "I managed the marketing department and its daily work, and coordinated with the other departments.",
+        "Campaigns produce a lot of customer and sales data, so I used it to see what worked and what didn't, and to guide the next decisions.",
+        "Customer segmentation and churn analysis fit this work naturally, and I see a clear use for machine learning here, for example in predicting how customers respond."
+      ],
+      tags: ["Marketing", "Customer Data", "Segmentation", "Data-Informed Decisions"]
     },
     {
       role: "Subscriptions Department Manager",
       org: "Air Defence House (Egyptian Armed Forces)",
       location: "Egypt",
-      period: "2023 – 2025",
+      period: "2023 – 2024",
       current: false,
       bullets: [
         "I managed membership and subscription operations: the administrative workflow, member records and transactions.",
         "Since everything ran on member and transaction records, I worked with that data to follow subscription activity and support decisions.",
-        "I also worked on making the administrative process smoother and the reporting clearer."
+        "I also worked on making the administrative process smoother and the reporting clearer. Subscription data is a natural fit for churn analysis and for machine learning, for example predicting which members may not renew."
       ],
-      tags: ["Subscription Data", "Operational Reporting", "Data-Informed Decisions", "Process Improvement"]
+      tags: ["Subscription Data", "Churn Analysis", "Operational Reporting", "Process Improvement"]
     },
     {
-      role: "Cost Control Department Manager",
+      role: "Cost Control Department Manager, Food & Beverage",
       org: "Air Defence House (Egyptian Armed Forces)",
       location: "Egypt",
       period: "2021 – 2023",
       current: false,
       bullets: [
-        "I managed the cost control department and the workflows around it.",
+        "I managed the cost control department for food and beverage operations and the workflows around it.",
         "I followed cost and consumption figures closely and relied on the numbers to keep control and accountability.",
-        "I coordinated with other departments and made sure procedures and service standards were followed."
+        "I coordinated with other departments and made sure procedures and service standards were followed. Cost and consumption data is exactly the kind that data analysis and forecasting models work well with."
       ],
-      tags: ["Cost Analysis", "Operational Data", "KPI Monitoring", "Coordination"]
+      tags: ["Cost Analysis", "Food & Beverage", "Consumption Data", "KPI Monitoring"]
     },
     {
       role: "Command Center Systems Engineer",
@@ -243,12 +256,58 @@ window.PORTFOLIO = {
     { title: "Application Development", items: ["Flutter", "Flutter Web", "Dart", "JSON", "Git", "GitHub"] }
   ],
 
+  /* ✏️ certificate = مسار صورة الشهادة. الزرار بيظهر لوحده أول ما الصورة تبقى موجودة في الفولدر */
   education: [
-    { degree: "Master's Degree in Data Analysis", school: "Cairo University, Egypt", period: "", note: "", current: false },
-    { degree: "Bachelor's Degree in Electrical Engineering (Computer Engineering)", school: "Military Technical College, Egypt", period: "", note: "", current: false }
+    {
+      degree: "Master's Degree in Data Analysis",
+      school: "Cairo University, Egypt",
+      period: "2024",
+      note: "",
+      current: false,
+      certificate: "assets/certificates/masters-degree.jpg"
+    },
+    {
+      degree: "Bachelor's Degree in Electrical Engineering (Computer Engineering)",
+      school: "Military Technical College, Egypt",
+      period: "2011",
+      note: "",
+      current: false,
+      certificate: "assets/certificates/bachelors-degree.jpg"
+    }
   ],
 
   certifications: [
-    { title: "Machine Learning Track (In Progress)", issuer: "Digital Egypt Pioneers Initiative (DEPI)", date: "Ongoing", url: "" }
+    {
+      title: "Machine Learning Track (In Progress)",
+      issuer: "Digital Egypt Pioneers Initiative (DEPI)",
+      note: "",
+      date: "Ongoing",
+      certificate: "assets/certificates/depi-certificate.jpg",
+      url: ""
+    },
+    {
+      title: "Protocol and Ceremonies Course",
+      issuer: "Military College of Management Sciences (MCMS), Egyptian Armed Forces",
+      note: "Course No. 8",
+      date: "20 Nov – 1 Dec 2024",
+      certificate: "assets/certificates/protocol-ceremonies-2024.jpg",
+      url: ""
+    },
+    {
+      title: "Administrative Leadership Qualification Course",
+      issuer: "Military College of Management Sciences (MCMS), Egyptian Armed Forces",
+      note: "Course No. 5",
+      date: "15 Jul – 19 Aug 2023",
+      certificate: "assets/certificates/leadership-2023.jpg",
+      url: ""
+    },
+    {
+      title: "Total Quality Management (TQM) Course",
+      issuer: "Military College of Management Sciences (MCMS), Egyptian Armed Forces",
+      note: "Course No. 1",
+      date: "4 – 21 Jun 2023",
+      certificate: "assets/certificates/tqm-2023.jpg",
+      url: ""
+    }
   ]
 };

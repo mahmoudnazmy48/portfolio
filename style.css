@@ -134,3 +134,11 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;bac
 @media(max-width:820px){.journey{grid-template-columns:1fr;gap:0;padding-left:22px;border-left:2px solid var(--line)}.j-step{border-top:0!important;padding:0 0 22px}.j-step::before{top:4px;left:-30px}}
 
 .empty{padding:36px 24px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:var(--radius);background:var(--surface)}
+
+.p-cover{height:auto;aspect-ratio:16/9}.p-cover img{position:absolute;inset:0}
+.m-img{width:100%;border-radius:12px;margin-top:16px;border:1px solid var(--line);background:var(--surface2)}
+
+.cert{align-items:flex-start}.cert b{display:block;font-weight:600}
+.cert-side{display:flex;flex-direction:column;align-items:flex-end;gap:8px;white-space:nowrap;text-align:right}
+.cert-btn{font-size:13px;font-weight:600;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:4px 12px}.cert-btn:hover{background:var(--surface2)}
+.edu .cert-btn{margin-top:14px}.cert-link{font-size:13px;color:var(--accent)}
