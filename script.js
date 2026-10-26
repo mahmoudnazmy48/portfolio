@@ -74,7 +74,9 @@
   /* ---------- Projects + modal ---------- */
   const P = D.projects || [];
   if (P.length) {
-    const cats = ['All', ...new Set(P.flatMap(p => p.categories || []))];
+    const tabs = (D.projectTabs || []).map(t => t.name);
+    const found = [...new Set(P.flatMap(p => p.categories || []))];
+    const cats = ['All', ...tabs, ...found.filter(c => !tabs.includes(c))];
     $('#filters').innerHTML = cats.length > 2 ? cats.map((c, i) => `<button class="fbtn${i ? '' : ' active'}" data-f="${esc(c)}">${esc(c)}</button>`).join('') : '';
     $('#projectGrid').innerHTML = P.map((p, i) => `
       <article class="card project reveal" data-i="${i}" data-cats="${esc((p.categories || []).join('|'))}" tabindex="0" role="button" aria-label="Open case study: ${esc(p.title)}">
@@ -85,7 +87,12 @@
     $('#filters').addEventListener('click', e => {
       const b = e.target.closest('.fbtn'); if (!b) return;
       $$('.fbtn').forEach(x => x.classList.toggle('active', x === b));
-      $$('.project').forEach(c => { c.hidden = b.dataset.f !== 'All' && !c.dataset.cats.split('|').includes(b.dataset.f); });
+      let shown = 0;
+      $$('.project').forEach(c => { c.hidden = b.dataset.f !== 'All' && !c.dataset.cats.split('|').includes(b.dataset.f); if (!c.hidden) shown++; });
+      const tab = (D.projectTabs || []).find(t => t.name === b.dataset.f);
+      const em = $('#projectEmpty');
+      em.textContent = tab && tab.empty ? tab.empty : 'No projects in this category yet.';
+      em.hidden = shown > 0;
     });
 
     const modal = $('#modal');
