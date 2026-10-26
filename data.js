@@ -41,6 +41,7 @@ window.PORTFOLIO = {
     { value: "M.Sc.", label: "Data Analysis · Cairo University" },
     { value: "B.Sc.", label: "Computer Engineering · Military Technical College" },
     { value: "DEPI", label: "Machine Learning Track · In Progress" },
+    { value: "9", label: "Hotel departments covered by the ERP project I managed" },
     { value: "3", label: "Live Flutter Web apps deployed" }
   ],
 
@@ -62,6 +63,12 @@ window.PORTFOLIO = {
       title: "Data Science & Machine Learning",
       text: "Moving from analyzing data to building models that learn from it.",
       points: ["Regression and classification", "Feature preparation and model evaluation", "Deep learning fundamentals (in progress)"]
+    },
+    {
+      icon: "🏨",
+      title: "Information Systems & ERP",
+      text: "Managing how systems are planned, built and adopted across departments.",
+      points: ["ERP implementation and project management", "Requirements analysis and database design", "User training"]
     }
   ],
 
@@ -76,9 +83,10 @@ window.PORTFOLIO = {
       bullets: [
         "I run the information systems department and coordinate the technical needs of daily operations.",
         "I keep our systems, data and digital workflows organized and reliable, which is the foundation any analysis or model depends on.",
-        "I look for ways to improve how information is collected and reported, and I'm building my machine learning skills with these operational problems in mind."
+        "I look for ways to improve how information is collected and reported, and I'm building my machine learning skills with these operational problems in mind.",
+        "I managed the implementation of a complete ERP system for the hotel together with the vendor company: requirements analysis, database design, project management and user training across nine departments."
       ],
-      tags: ["Information Systems", "Data Management", "Reporting", "Machine Learning (learning)"]
+      tags: ["Information Systems", "ERP", "Data Management", "Reporting", "Machine Learning (learning)"]
     },
     {
       role: "Marketing Department Manager",
@@ -138,11 +146,34 @@ window.PORTFOLIO = {
   projectTabs: [
     { name: "Data Analysis & BI" },
     { name: "Machine Learning", empty: "Machine learning projects are on the way. I'm building them as part of the DEPI track and they will be published here." },
+    { name: "Information Systems" },
     { name: "Applications" }
   ],
 
   /* ✏️ مشاريع Data الأول، وبعدها مشاريع Tiba Rose. أضف لينك Repo للـ Churn والـ Gate DB لما ترفعهم */
   projects: [
+    {
+      title: "Hotel ERP Implementation: Air Defence House",
+      badge: "Project Management",
+      icon: "🏨",
+      image: "",
+      categories: ["Information Systems"],
+      summary: "I managed the implementation of a complete ERP system for the hotel, working with the vendor company across nine departments.",
+      tags: ["ERP", "Requirements Analysis", "Database Design", "Project Management", "User Training"],
+      problem: "",
+      solution: "The system was built for the hotel by an external company. I managed the project on the hotel's side: I analyzed the requirements of each department, designed the database, managed the project and trained the users.",
+      featuresTitle: "My role",
+      features: [
+        "Requirements analysis with each department.",
+        "Database design for the system.",
+        "Project management, coordinating the hotel and the vendor company.",
+        "Training the users.",
+        "Departments covered: Housing, Reception, Food & Beverage, HR, Subscriptions, Finance, Warehouses, Events and Marketing."
+      ],
+      results: "",
+      github: "",
+      live: ""
+    },
     {
       title: "Customer Segmentation & Churn Analysis",
       badge: "Analytics & BI",
@@ -253,6 +284,7 @@ window.PORTFOLIO = {
     { title: "Data Analysis & BI", items: ["Power BI", "DAX", "Excel", "Data Cleaning", "Exploratory Data Analysis", "Data Visualization", "KPI Reporting", "Statistical Analysis", "Customer Segmentation", "Churn Analysis"] },
     { title: "Machine Learning & AI", items: ["Supervised Learning", "Regression", "Classification", "Feature Preparation", "Model Evaluation", "Deep Learning Fundamentals"] },
     { title: "Programming & Databases", items: ["Python", "SQL", "R", "Microsoft SQL Server", "Relational Database Design"] },
+    { title: "Systems & Project Management", items: ["ERP Implementation", "Requirements Analysis", "Project Management", "User Training"] },
     { title: "Application Development", items: ["Flutter", "Flutter Web", "Dart", "JSON", "Git", "GitHub"] }
   ],
 

@@ -105,7 +105,7 @@
         ${p.image ? `<img class="m-img" src="${esc(p.image)}" alt="Screenshot of ${esc(p.title)}" loading="lazy" />` : ''}<p class="sub" style="margin:10px 0 0">${esc(p.summary)}</p>${tags(p.tags)}
         ${sec('The problem', p.problem && `<p>${esc(p.problem)}</p>`)}
         ${sec('The solution', p.solution && `<p>${esc(p.solution)}</p>`)}
-        ${sec('Key features', (p.features || []).length ? `<ul>${p.features.map(f => `<li>${esc(f)}</li>`).join('')}</ul>` : '')}
+        ${sec(esc(p.featuresTitle || 'Key features'), (p.features || []).length ? `<ul>${p.features.map(f => `<li>${esc(f)}</li>`).join('')}</ul>` : '')}
         ${sec('Results & impact', p.results && `<p>${esc(p.results)}</p>`)}
         <div class="m-foot">${ext(p.live, 'Live demo', 'btn primary')}${ext(p.github, 'Source code')}</div></div>`;
       modal.showModal();
