@@ -42,6 +42,7 @@ window.PORTFOLIO = {
     { value: "B.Sc.", label: "Computer Engineering · Military Technical College" },
     { value: "DEPI", label: "Machine Learning Track · In Progress" },
     { value: "9", label: "Hotel departments covered by the ERP project I managed" },
+    { value: "3", label: "Live ML & analytics apps on Streamlit" },
     { value: "3", label: "Live Flutter Web apps deployed" }
   ],
 
@@ -145,13 +146,75 @@ window.PORTFOLIO = {
   /* تبويبات المشاريع بالترتيب. تبويب فاضي بيظهر رسالة بدل صفحة فاضية */
   projectTabs: [
     { name: "Data Analysis & BI" },
-    { name: "Machine Learning", empty: "Machine learning projects are on the way. I'm building them as part of the DEPI track and they will be published here." },
+    { name: "Machine Learning" },
     { name: "Information Systems" },
     { name: "Applications" }
   ],
 
-  /* ✏️ مشاريع Data الأول، وبعدها مشاريع Tiba Rose. أضف لينك Repo للـ Churn والـ Gate DB لما ترفعهم */
+  /* ✏️ مشاريع Data و ML الأول، وبعدها مشاريع Tiba Rose. أضف لينك Repo للـ Churn والـ Gate DB لما ترفعهم */
   projects: [
+    {
+      title: "Ford GoBike Trip Analysis & Dashboard",
+      badge: "Data Analysis · Live",
+      icon: "🚲",
+      image: "assets/fordbikeda.jpg",
+      categories: ["Data Analysis & BI"],
+      summary: "Exploratory analysis of Ford GoBike trip data with a reusable cleaning pipeline and an interactive dashboard.",
+      tags: ["Python", "Pandas", "Plotly", "Dash", "Streamlit", "EDA"],
+      problem: "Raw bike-share trip records need cleaning and structure before they can answer questions about users, stations and trip behavior.",
+      solution: "Started from an exploratory notebook and separated the reusable logic into a Python pipeline for loading, cleaning and validation, plus feature engineering for rider age and trip duration. On top of it I built an interactive dashboard and deployed it on Streamlit Cloud.",
+      featuresTitle: "Key features",
+      features: [
+        "Modular pipeline: data loading, preprocessing, feature engineering and analysis functions.",
+        "Interactive dashboard with Plotly charts and filtering.",
+        "Sections: overview KPIs, time analysis, user analysis, station and trip analysis, and relationships between variables.",
+        "Documented a source-data limitation (time fields stored as MM:SS.f) and avoided inventing date-based features."
+      ],
+      results: "",
+      github: "https://github.com/mahmoudnazmy48/fordgobike-data_anaylsis-and-Dashboard",
+      live: "https://fordgobike-dataanaylsis-and-dashboard-dd9xzlfkdzrwu9ng9k9ujd.streamlit.app/"
+    },
+    {
+      title: "Wholesale Customer Segmentation & Decision Engine",
+      badge: "Machine Learning · Live",
+      icon: "📦",
+      image: "assets/wholesale-customer-segmentation.jpg",
+      categories: ["Machine Learning"],
+      summary: "Unsupervised customer segmentation (PCA and K-Means) followed by a Random Forest classifier, deployed as an interactive Streamlit app.",
+      tags: ["Python", "scikit-learn", "PCA", "K-Means", "Random Forest", "Streamlit"],
+      problem: "A wholesale distributor has annual spending data across six product categories but no labels for customer types, and needs to decide how delivery schedules should differ between them.",
+      solution: "Log-transformed the skewed spending data, handled outliers with Tukey's fence, reduced dimensions with PCA and clustered customers with K-Means, choosing the number of clusters with silhouette analysis. The clusters became labels for a Random Forest classifier that assigns new customers instantly, and the whole workflow is served through a Streamlit app.",
+      featuresTitle: "Key features",
+      features: [
+        "Two segments found: retailers and supermarkets versus hospitality and food service.",
+        "Segment-specific delivery recommendations: 3 days per week for retail, 5 days for fresh-focused hospitality clients.",
+        "A/B test design stratified by segment instead of randomized across all customers.",
+        "Saved model bundle for instant classification of new customers."
+      ],
+      results: "",
+      github: "https://github.com/mahmoudnazmy48/wholesale-customer-segmentation",
+      live: "https://wholesale-customer-segmentation-rkdethyxdj7jkzhtygbpgo.streamlit.app/"
+    },
+    {
+      title: "CharityML: Donor Classification App",
+      badge: "Machine Learning · Live",
+      icon: "🤝",
+      image: "assets/charityml.jpg",
+      categories: ["Machine Learning"],
+      summary: "A supervised classification model (tuned AdaBoost) with a saved preprocessing pipeline, deployed as a Streamlit app.",
+      tags: ["Python", "scikit-learn", "AdaBoost", "Classification", "Streamlit"],
+      problem: "A charity wants to target outreach at the people most likely to donate, rather than contacting everyone.",
+      solution: "Trained and tuned an AdaBoost classifier, saved the scaler, feature columns and best model, and wrapped them in a Streamlit app so predictions can be made from a simple interface.",
+      featuresTitle: "Key features",
+      features: [
+        "AdaBoost classifier with hyperparameter tuning.",
+        "Saved scaler and model columns to keep training and prediction consistent.",
+        "Deployed on Streamlit Cloud as a live demo."
+      ],
+      results: "",
+      github: "https://github.com/mahmoudnazmy48/CharityML",
+      live: "https://charityml-hdo92mma8hcmzkj8ljysjm.streamlit.app/"
+    },
     {
       title: "Hotel ERP Implementation: Air Defence House",
       badge: "Project Management",
@@ -174,45 +237,12 @@ window.PORTFOLIO = {
       github: "",
       live: ""
     },
-    {
-      title: "Customer Segmentation & Churn Analysis",
-      badge: "Analytics & BI",
-      icon: "📊",
-      image: "",
-      categories: ["Data Analysis & BI"],
-      summary: "Exploratory analysis, customer segmentation and churn-related insights with KPI reporting.",
-      tags: ["Python", "SQL", "Power BI", "DAX", "Excel"],
-      problem: "",
-      solution: "Worked on data preparation, exploratory analysis, visualizations and KPI reporting to explore customer segments and churn patterns.",
-      features: [],
-      results: "",
-      github: "",
-      live: ""
-    },
-    {
-      title: "Gate Access & Point-of-Sale Database",
-      badge: "Database Design",
-      icon: "🎟️",
-      image: "",
-      categories: ["Data Analysis & BI"],
-      summary: "A relational database design for gate operations, ticket sales, memberships and operational reporting.",
-      tags: ["SQL Server", "SQL", "Relational Design"],
-      problem: "Gate, ticketing and membership information needs a consistent structure to support reliable operations and reporting.",
-      solution: "Designed a relational schema and business rules for gate operations, ticket sales and membership records, focused on data integrity and reporting needs.",
-      features: [
-        "Relational tables with defined relationships.",
-        "Constraints and business rules for data integrity.",
-        "A structure intended to support operational reporting."
-      ],
-      results: "",
-      github: "",
-      live: ""
-    },
+    
     {
       title: "Tiba Rose Customer Feedback",
       badge: "Flutter Web · Live",
       icon: "💬",
-      image: "",
+      image: "assets/marketing.jpg",
       categories: ["Applications"],
       summary: "A Flutter web application for collecting customer feedback at Tiba Rose.",
       tags: ["Flutter", "Dart", "Flutter Web"],
@@ -230,7 +260,7 @@ window.PORTFOLIO = {
       title: "Tiba Rose Navigation Map",
       badge: "Flutter Web · Live",
       icon: "🧭",
-      image: "",
+      image: "assets/navigationmap.jpg",
       categories: ["Applications"],
       summary: "An interactive navigation map for a hospitality venue, driven by structured JSON data.",
       tags: ["Flutter", "Dart", "JSON"],
@@ -249,7 +279,7 @@ window.PORTFOLIO = {
       title: "Tiba Rose App",
       badge: "Flutter Web · Live",
       icon: "🌹",
-      image: "",
+      image: "assets/tibaapp.jpg",
       categories: ["Applications"],
       summary: "The main Tiba Rose application, built with Flutter and deployed as a live web app.",
       tags: ["Flutter", "Dart", "Flutter Web"],
@@ -263,29 +293,15 @@ window.PORTFOLIO = {
       github: "https://github.com/mahmoudnazmy48/Tiba-Rose-App",
       live: "https://mahmoudnazmy48.github.io/Tiba-Rose-App/"
     },
-    {
-      title: "Tiba Rose Marketing",
-      badge: "Flutter Web",
-      icon: "📣",
-      image: "",
-      categories: ["Applications"],
-      summary: "A Flutter web application focused on Tiba Rose marketing.",
-      tags: ["Flutter", "Dart", "Flutter Web"],
-      problem: "",
-      solution: "Built with Flutter and compiled for the web.",
-      features: [],
-      results: "",
-      github: "https://github.com/mahmoudnazmy48/Tiba-Rose-Marketing",
-      live: ""
-    }
+    
   ],
 
   skills: [
     { title: "Data Analysis & BI", items: ["Power BI", "DAX", "Excel", "Data Cleaning", "Exploratory Data Analysis", "Data Visualization", "KPI Reporting", "Statistical Analysis", "Customer Segmentation", "Churn Analysis"] },
-    { title: "Machine Learning & AI", items: ["Supervised Learning", "Regression", "Classification", "Feature Preparation", "Model Evaluation", "Deep Learning Fundamentals"] },
-    { title: "Programming & Databases", items: ["Python", "SQL", "R", "Microsoft SQL Server", "Relational Database Design"] },
-    { title: "Systems & Project Management", items: ["ERP Implementation", "Requirements Analysis", "Project Management", "User Training"] },
-    { title: "Application Development", items: ["Flutter", "Flutter Web", "Dart", "JSON", "Git", "GitHub"] }
+    { title: "Machine Learning & AI", items: ["Supervised Learning", "Unsupervised Learning", "Regression", "Classification", "Clustering (K-Means)", "PCA", "Random Forest", "AdaBoost", "Feature Engineering", "Model Evaluation", "Deep Learning Fundamentals"] },
+    { title: "Programming, Databases & Tools", items: ["Python", "SQL", "R", "Pandas", "NumPy", "scikit-learn", "Plotly", "Streamlit", "Microsoft SQL Server", "Relational Database Design", "Git", "GitHub"] },
+    { title: "Systems & Project Management", items: ["ERP Implementation", "Requirements Analysis", "Project Management", "User Training", "Cost Control", "Stakeholder Coordination"] },
+    { title: "Application Development", items: ["Flutter", "Flutter Web", "Dart", "JSON"] }
   ],
 
   /* ✏️ certificate = مسار صورة الشهادة. الزرار بيظهر لوحده أول ما الصورة تبقى موجودة في الفولدر */
@@ -293,7 +309,7 @@ window.PORTFOLIO = {
     {
       degree: "Master's Degree in Data Analysis",
       school: "Cairo University, Egypt",
-      period: "2024",
+      period: "2024 – 2026",
       note: "",
       current: false,
       certificate: "assets/certificates/masters-degree.jpg"
@@ -301,7 +317,7 @@ window.PORTFOLIO = {
     {
       degree: "Bachelor's Degree in Electrical Engineering (Computer Engineering)",
       school: "Military Technical College, Egypt",
-      period: "2011",
+      period: "2006 – 2011",
       note: "",
       current: false,
       certificate: "assets/certificates/bachelors-degree.jpg"

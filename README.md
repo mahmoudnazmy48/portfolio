@@ -8,3 +8,5 @@ Static portfolio (HTML/CSS/JS), no build step, no dependencies.
 4. Push to GitHub → Settings → Pages → Deploy from branch `main` / root.
 
 Preview locally: open `index.html`, or run `python -m http.server` and visit http://localhost:8000
+
+Note: assets/CV.pdf is already included. Add assets/profile.jpg and assets/og.png (1200x630) before publishing.
